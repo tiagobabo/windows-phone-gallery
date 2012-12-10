@@ -1,0 +1,13 @@
+C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\Bin\Debug\ApplicationIcon.png
+C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\Bin\Debug\Background.png
+C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\Bin\Debug\Gallery.dll
+C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\Bin\Debug\Gallery.pdb
+C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\Bin\Debug\AppManifest.xaml
+C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\Bin\Debug\Gallery.xap
+C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\obj\Debug\App.g.i.cs
+C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\obj\Debug\MainPage.g.i.cs
+C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\obj\Debug\Gallery.g.resources
+C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\obj\Debug\Gallery.dll
+C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\obj\Debug\Gallery.pdb
+C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\obj\Debug\XapCacheFile.xml
