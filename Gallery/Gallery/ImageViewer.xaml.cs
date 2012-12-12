@@ -58,8 +58,8 @@ namespace Gallery
 
         private void Image_ManipulationDelta(object sender, ManipulationDeltaEventArgs e)
         {
-            transform.TranslateX = e.CumulativeManipulation.Translation.X + startingPositionOfImageX;
-            transform.TranslateY = e.CumulativeManipulation.Translation.Y + startingPositionOfImageY;
+            transform.TranslateX = e.CumulativeManipulation.Translation.X * transform.ScaleX + startingPositionOfImageX;
+            transform.TranslateY = e.CumulativeManipulation.Translation.Y * transform.ScaleY + startingPositionOfImageY;
         }
     }
 }
