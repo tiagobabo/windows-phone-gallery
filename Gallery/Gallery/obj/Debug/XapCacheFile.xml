@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<xapCache source="C:\windows-phone-gallery\Gallery\Gallery\Bin\Debug\Gallery.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="12/12/2012 22:46:34">
   <file source="C:\windows-phone-gallery\Gallery\Gallery\Bin\Debug\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="12/12/2012 22:42:06" />
   <file source="C:\windows-phone-gallery\Gallery\Gallery\Background.png" archivePath="Background.png" lastWriteTime="12/12/2012 20:02:22" />
@@ -7,4 +8,13 @@
   <file source="C:\windows-phone-gallery\Gallery\Gallery\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="12/12/2012 22:42:06" />
   <file source="C:\windows-phone-gallery\Gallery\Gallery\Bin\Debug\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="12/12/2012 20:02:22" />
   <file source="C:\windows-phone-gallery\Gallery\Gallery\Bin\Debug\Background.png" archivePath="Background.png" lastWriteTime="12/12/2012 20:02:22" />
+=======
+﻿<xapCache source="C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\Bin\Debug\Gallery.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="12-12-2012 20:42:33">
+  <file source="C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\Bin\Debug\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="10-12-2012 23:15:15" />
+  <file source="C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\Background.png" archivePath="Background.png" lastWriteTime="10-12-2012 23:07:34" />
+  <file source="C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="10-12-2012 23:07:34" />
+  <file source="C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\obj\Debug\Gallery.dll" archivePath="Gallery.dll" lastWriteTime="12-12-2012 20:42:33" />
+  <file source="C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\SplashScreenImage.jpg" archivePath="SplashScreenImage.jpg" lastWriteTime="10-12-2012 23:07:34" />
+  <file source="C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="10-12-2012 23:15:15" />
+>>>>>>> 77f3e932dbd3e6330071899e1fce97f4d23b39af
 </xapCache>
