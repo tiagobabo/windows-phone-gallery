@@ -48,9 +48,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Data.Edm.WP71">
+      <HintPath>..\packages\Microsoft.Data.OData.WindowsPhone.5.0.0.0\lib\sl4-windowsphone71\Microsoft.Data.Edm.WP71.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData.WP71">
+      <HintPath>..\packages\Microsoft.Data.OData.WindowsPhone.5.0.0.0\lib\sl4-windowsphone71\Microsoft.Data.OData.WP71.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client.WP71">
+      <HintPath>..\packages\Microsoft.Data.Services.Client.WindowsPhone.5.0.0.0\lib\sl4-windowsphone71\Microsoft.Data.Services.Client.WP71.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Phone" />
     <Reference Include="Microsoft.Phone.Interop" />
     <Reference Include="Microsoft.Xna.Framework" />
+    <Reference Include="System.Spatial.WP71">
+      <HintPath>..\packages\Microsoft.Data.OData.WindowsPhone.5.0.0.0\lib\sl4-windowsphone71\System.Spatial.WP71.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows" />
     <Reference Include="system" />
     <Reference Include="System.Core" />
@@ -62,6 +74,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BingSearchContainer.cs" />
     <Compile Include="ImageViewer.xaml.cs">
       <DependentUpon>ImageViewer.xaml</DependentUpon>
     </Compile>
@@ -85,6 +98,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml" />
   </ItemGroup>

@@ -12,3 +12,7 @@ C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\obj\Debug\Gallery.dl
 C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\obj\Debug\Gallery.pdb
 C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\obj\Debug\XapCacheFile.xml
 C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\obj\Debug\ImageViewer.g.i.cs
+C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\Bin\Debug\Microsoft.Data.Edm.WP71.dll
+C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\Bin\Debug\Microsoft.Data.OData.WP71.dll
+C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\Bin\Debug\Microsoft.Data.Services.Client.WP71.dll
+C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\Bin\Debug\System.Spatial.WP71.dll
