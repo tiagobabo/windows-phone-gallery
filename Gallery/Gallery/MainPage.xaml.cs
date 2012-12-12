@@ -12,37 +12,62 @@ using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using System.Windows.Media.Imaging;
 using Microsoft.Xna.Framework.Media;
+using Microsoft.Phone.Shell;
 
 namespace Gallery
 {
     public partial class MainPage : PhoneApplicationPage
     {
-        // Constructor
+        int GridRowHeight = 150;
+        int ImageHeight = 140;
+        int ImageWidth = 140;
+        int ImagesPerRow = 3;
+
         public MainPage()
         {
             InitializeComponent();
+            PopulateImageGrid();
+        }
 
+        private void PopulateImageGrid()
+        {
             MediaLibrary mediaLibrary = new MediaLibrary();
             var pictures = mediaLibrary.Pictures;
-            foreach (var picture in pictures)
+
+            for (int i = 0; i < pictures.Count; i += ImagesPerRow)
             {
-                BitmapImage image = new BitmapImage();
-                image.SetSource(picture.GetImage());
+                RowDefinition rd = new RowDefinition();
+                rd.Height = new GridLength(GridRowHeight);
+                grid1.RowDefinitions.Add(rd);
 
-                MediaImage mediaImage = new MediaImage();
-                mediaImage.ImageFile = image;
+                int maxPhotosToProcess = (i + ImagesPerRow < pictures.Count ? i + ImagesPerRow : pictures.Count);
+                int rowNumber = i / ImagesPerRow;
+                for (int j = i; j < maxPhotosToProcess; j++)
+                {
+                    BitmapImage image = new BitmapImage();
+                    image.SetSource(pictures[j].GetImage());
 
-                listBox1.Items.Add(mediaImage);
+                    Image img = new Image();
+                    img.Height = ImageHeight;
+                    img.Stretch = Stretch.Fill;
+                    img.Width = ImageWidth;
+                    img.HorizontalAlignment = HorizontalAlignment.Center;
+                    img.VerticalAlignment = VerticalAlignment.Center;
+                    img.Source = image;
+                    img.SetValue(Grid.RowProperty, rowNumber);
+                    img.SetValue(Grid.ColumnProperty, j - i);
+                    img.Tap += Image_Tap;
+                    grid1.Children.Add(img);
+                }
             }
         }
 
-        private void listBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Image_Tap(object sender, GestureEventArgs e)
         {
-            MediaLibrary mediaLibrary = new MediaLibrary();
-            BitmapImage image = new BitmapImage();
-            image.SetSource(mediaLibrary.Pictures[listBox1.SelectedIndex].GetImage());
-            image1.Source = image;
+            this.NavigationService.Navigate(new Uri("/ImageViewer.xaml", UriKind.Relative));
+            PhoneApplicationService.Current.State["Image"] = sender as Image;
         }
+
     }
 
    

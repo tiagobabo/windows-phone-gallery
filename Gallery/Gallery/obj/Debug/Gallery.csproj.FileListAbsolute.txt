@@ -11,3 +11,4 @@ C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\obj\Debug\Gallery.g.
 C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\obj\Debug\Gallery.dll
 C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\obj\Debug\Gallery.pdb
 C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\obj\Debug\XapCacheFile.xml
+C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\obj\Debug\ImageViewer.g.i.cs
