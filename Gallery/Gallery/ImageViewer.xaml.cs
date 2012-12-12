@@ -20,7 +20,7 @@ namespace Gallery
         double startingPositionOfImageY;
 
         public ImageViewer()
-        {
+        { 
             InitializeComponent();
             Image image = PhoneApplicationService.Current.State["Image"] as Image;
             image1.Source = image.Source;
@@ -58,8 +58,13 @@ namespace Gallery
 
         private void Image_ManipulationDelta(object sender, ManipulationDeltaEventArgs e)
         {
+            double previousRotation = transform.Rotation;
+            transform.Rotation = 0.0;
+
             transform.TranslateX = e.CumulativeManipulation.Translation.X * transform.ScaleX + startingPositionOfImageX;
             transform.TranslateY = e.CumulativeManipulation.Translation.Y * transform.ScaleY + startingPositionOfImageY;
+
+            transform.Rotation = previousRotation;
         }
     }
 }

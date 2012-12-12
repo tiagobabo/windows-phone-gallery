@@ -16,16 +16,18 @@ using Microsoft.Phone.Shell;
 
 namespace Gallery
 {
-    public partial class MainPage : PhoneApplicationPage
+    public partial class LocalStorage : PhoneApplicationPage
     {
         int GridRowHeight = 150;
         int ImageHeight = 140;
         int ImageWidth = 140;
         int ImagesPerRow = 3;
 
-        public MainPage()
+        public LocalStorage()
         {
             InitializeComponent();
+            ApplicationTitle.Text = Utilities.appName;
+            PageTitle.Text = "local storage";
             PopulateImageGrid();
         }
 
