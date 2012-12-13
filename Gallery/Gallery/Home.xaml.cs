@@ -17,6 +17,7 @@ namespace Gallery
         {
             InitializeComponent();
             ApplicationTitle.Text = Utilities.appName;
+            progressBar.Visibility = Visibility.Collapsed;
             PageTitle.Text = "home";
         }
 
@@ -29,6 +30,7 @@ namespace Gallery
         {
             WebClient wc = new WebClient();
             wc.OpenReadCompleted += new OpenReadCompletedEventHandler(wc_OpenReadCompleted);
+            progressBar.Visibility = Visibility.Visible;
             wc.OpenReadAsync(new Uri("http://www.cardioaccess.com/OpImages/asd1.jpg"), wc);
         }
 
@@ -39,6 +41,7 @@ namespace Gallery
                 try
                 {
                     Image img = new Image();
+                    progressBar.Visibility = Visibility.Collapsed;
                     BitmapImage image = new BitmapImage();
                     image.SetSource(e.Result);
                     img.Source = image;
