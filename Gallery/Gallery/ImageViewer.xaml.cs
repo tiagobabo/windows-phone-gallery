@@ -74,8 +74,5 @@ namespace Gallery
 
             transform.Rotation = previousRotation;
         }
-
-
-
     }
 }
