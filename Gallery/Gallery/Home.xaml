@@ -36,6 +36,7 @@
             <TextBlock HorizontalAlignment="Left" Margin="31,377,0,0" TextWrapping="Wrap" Text="or you can insert a link directly:" VerticalAlignment="Top"/>
             <TextBox x:Name="txtURL"  HorizontalAlignment="Center" Height="72"  TextWrapping="Wrap" Text="insert here" VerticalAlignment="Top" Width="436" Margin="10,413,10,0"/>
             <Button x:Name="btnOpenFromLink" Content="Open" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="164,490,163,0" Click="btnOpenFromLink_Click"/>
+            <ProgressBar HorizontalAlignment="Center" Margin="31,562,42,15" Name="progressBar" Width="383" IsIndeterminate="True" RenderTransformOrigin="0.554,11.467" />
         </Grid>
         
     </Grid>
