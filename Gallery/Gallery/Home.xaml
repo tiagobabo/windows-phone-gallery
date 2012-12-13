@@ -28,11 +28,15 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-
+                   
+            <Button x:Name="btnLocalStorage" Content="Local storage" HorizontalAlignment="Center"  VerticalAlignment="Top" Click="btnLocalStorage_Click" Margin="127,68,126,0" />
+            <Button Content="Button" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="164,217,163,0"/>
+            <Button Content="Button" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="164,140,163,0"/>
+            <TextBlock HorizontalAlignment="Left" Margin="31,377,0,0" TextWrapping="Wrap" Text="or you can insert a link directly:" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtURL"  HorizontalAlignment="Center" Height="72"  TextWrapping="Wrap" Text="insert here" VerticalAlignment="Top" Width="436" Margin="10,413,10,0"/>
+            <Button x:Name="btnOpenFromLink" Content="Open" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="164,490,163,0" Click="btnOpenFromLink_Click"/>
         </Grid>
-        <Button x:Name="btnLocalStorage" Content="Local storage" HorizontalAlignment="Left" Margin="134,10,0,0" Grid.Row="1" VerticalAlignment="Top" Click="btnLocalStorage_Click" />
-        <Button Content="Button" HorizontalAlignment="Left" Margin="170,82,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="170,154,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        
     </Grid>
 
 </phone:PhoneApplicationPage>

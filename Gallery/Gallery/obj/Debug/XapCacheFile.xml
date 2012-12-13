@@ -1,12 +1,12 @@
-﻿<xapCache source="C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\Bin\Debug\Gallery.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="13-12-2012 00:04:10">
-  <file source="C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\Bin\Debug\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="12-12-2012 23:13:24" />
+﻿<xapCache source="C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\Bin\Debug\Gallery.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="13-12-2012 00:20:22">
+  <file source="C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\Bin\Debug\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="13-12-2012 00:20:21" />
   <file source="C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\Background.png" archivePath="Background.png" lastWriteTime="10-12-2012 23:07:34" />
   <file source="C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="10-12-2012 23:07:34" />
-  <file source="C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\obj\Debug\Gallery.dll" archivePath="Gallery.dll" lastWriteTime="13-12-2012 00:04:09" />
+  <file source="C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\obj\Debug\Gallery.dll" archivePath="Gallery.dll" lastWriteTime="13-12-2012 00:20:21" />
   <file source="C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\packages\Microsoft.Data.OData.WindowsPhone.5.0.0.0\lib\sl4-windowsphone71\Microsoft.Data.Edm.WP71.dll" archivePath="Microsoft.Data.Edm.WP71.dll" lastWriteTime="12-12-2012 22:14:33" />
   <file source="C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\packages\Microsoft.Data.OData.WindowsPhone.5.0.0.0\lib\sl4-windowsphone71\Microsoft.Data.OData.WP71.dll" archivePath="Microsoft.Data.OData.WP71.dll" lastWriteTime="12-12-2012 22:14:33" />
   <file source="C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\packages\Microsoft.Data.Services.Client.WindowsPhone.5.0.0.0\lib\sl4-windowsphone71\Microsoft.Data.Services.Client.WP71.dll" archivePath="Microsoft.Data.Services.Client.WP71.dll" lastWriteTime="12-12-2012 22:20:13" />
   <file source="C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\packages\Microsoft.Data.OData.WindowsPhone.5.0.0.0\lib\sl4-windowsphone71\System.Spatial.WP71.dll" archivePath="System.Spatial.WP71.dll" lastWriteTime="12-12-2012 22:14:33" />
   <file source="C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\SplashScreenImage.jpg" archivePath="SplashScreenImage.jpg" lastWriteTime="10-12-2012 23:07:34" />
-  <file source="C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="12-12-2012 23:13:24" />
+  <file source="C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="13-12-2012 00:20:21" />
 </xapCache>
