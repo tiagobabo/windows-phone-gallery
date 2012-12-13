@@ -19,104 +19,13 @@ namespace Gallery
 {
     public partial class LocalStorage : PhoneApplicationPage
     {
-        int GridRowHeight = 150;
-        int ImageHeight = 140;
-        int ImageWidth = 140;
-        int ImagesPerRow = 3;
-        
-        int RowNow = 0;
-        int ColumnNow = 0;
 
         public LocalStorage()
         {
             InitializeComponent();
             ApplicationTitle.Text = Utilities.appName;
             PageTitle.Text = "local storage";
-           // PopulateImageGrid();
-
-            RowDefinition rd = new RowDefinition();
-            rd.Height = new GridLength(GridRowHeight);
-            grid1.RowDefinitions.Add(rd);
-
-            var bingContainer = new Bing.BingSearchContainer(
-                new Uri("https://api.datamarket.azure.com/Bing/Search/"));
-
-            var accountKey = "XXQj7RFCzyb5w0QR0xhLd3g3pFCu4zRuBKhwJ/25Vh0=";
-
-            bingContainer.Credentials = new NetworkCredential(accountKey, accountKey);
-
-            bingContainer.UseDefaultCredentials = false;
-
-            var imageQuery = bingContainer.Image("cats", null, "en-US", null, null, null, "Size:Medium");
-
-            imageQuery.BeginExecute(new AsyncCallback(this.ImageResultLoadedCallback), imageQuery);
-        }
-
-        private void ImageResultLoadedCallback(IAsyncResult ar)
-        {
-            var imageQuery = (DataServiceQuery<Bing.ImageResult>)ar.AsyncState;
-
-            var enumerableImages = imageQuery.EndExecute(ar);
-
-            var imagesList = enumerableImages.ToList();
-            RowNow = 0;
-            ColumnNow = 0;
-            foreach (var image in imagesList)
-            {
-                WebClient wc = new WebClient();
-                wc.OpenReadCompleted += new OpenReadCompletedEventHandler(wc_OpenReadCompleted);
-                wc.OpenReadAsync(new Uri(image.MediaUrl), wc);
-            }
-        }
-
-
-        void wc_OpenReadCompleted(object sender, OpenReadCompletedEventArgs e)
-        {
-            if (e.Error == null && !e.Cancelled)
-            {
-                try
-                {
-                    Dispatcher.BeginInvoke(() =>
-                    {
-                        BitmapImage image = new BitmapImage();
-                        try
-                        {
-                            image.SetSource(e.Result);
-                        }
-                        catch (Exception ex) { return; }
-
-                        PopulateImageGrid2(image);  
-                    });
-                        
-                }
-                catch (Exception ex) {}
-            }
-        }
-
-        private void PopulateImageGrid2(BitmapImage image)
-        {
-            Image img = new Image();
-            img.Height = ImageHeight;
-            img.Stretch = Stretch.Fill;
-            img.Width = ImageWidth;
-            img.HorizontalAlignment = HorizontalAlignment.Center;
-            img.VerticalAlignment = VerticalAlignment.Center;
-            img.Source = image;
-            img.SetValue(Grid.RowProperty, RowNow);
-            img.SetValue(Grid.ColumnProperty, ColumnNow);
-            img.Tap += Image_Tap;
-            grid1.Children.Add(img);
-
-            ColumnNow++;
-
-            if(ColumnNow == ImagesPerRow) {
-                ColumnNow = 0;
-                RowNow++;
-
-                RowDefinition rd = new RowDefinition();
-                rd.Height = new GridLength(GridRowHeight);
-                grid1.RowDefinitions.Add(rd);
-            }
+            PopulateImageGrid();
         }
 
         private void PopulateImageGrid()
@@ -124,23 +33,23 @@ namespace Gallery
             MediaLibrary mediaLibrary = new MediaLibrary();
             var pictures = mediaLibrary.Pictures;
 
-            for (int i = 0; i < pictures.Count; i += ImagesPerRow)
+            for (int i = 0; i < pictures.Count; i += Utilities.ImagesPerRow)
             {
                 RowDefinition rd = new RowDefinition();
-                rd.Height = new GridLength(GridRowHeight);
+                rd.Height = new GridLength(Utilities.GridRowHeight);
                 grid1.RowDefinitions.Add(rd);
 
-                int maxPhotosToProcess = (i + ImagesPerRow < pictures.Count ? i + ImagesPerRow : pictures.Count);
-                int rowNumber = i / ImagesPerRow;
+                int maxPhotosToProcess = (i + Utilities.ImagesPerRow < pictures.Count ? i + Utilities.ImagesPerRow : pictures.Count);
+                int rowNumber = i / Utilities.ImagesPerRow;
                 for (int j = i; j < maxPhotosToProcess; j++)
                 {
                     BitmapImage image = new BitmapImage();
                     image.SetSource(pictures[j].GetImage());
 
                     Image img = new Image();
-                    img.Height = ImageHeight;
+                    img.Height = Utilities.ImageHeight;
                     img.Stretch = Stretch.Fill;
-                    img.Width = ImageWidth;
+                    img.Width = Utilities.ImageWidth;
                     img.HorizontalAlignment = HorizontalAlignment.Center;
                     img.VerticalAlignment = VerticalAlignment.Center;
                     img.Source = image;

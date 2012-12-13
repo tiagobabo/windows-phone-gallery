@@ -11,6 +11,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using System.Windows.Media.Imaging;
 
 namespace Gallery
 {
@@ -18,11 +19,12 @@ namespace Gallery
     {
         double startingPositionOfImageX;
         double startingPositionOfImageY;
+        Image image;
 
         public ImageViewer()
         { 
             InitializeComponent();
-            Image image = PhoneApplicationService.Current.State["Image"] as Image;
+            image = PhoneApplicationService.Current.State["Image"] as Image;
             image1.Source = image.Source;
             image1.ManipulationStarted += Image_ManipulationStarted;
             image1.ManipulationDelta += Image_ManipulationDelta;
@@ -50,6 +52,12 @@ namespace Gallery
             transform.Rotation -= 10.0;
         }
 
+        private void Save_image_Click(object sender, RoutedEventArgs e)
+        {
+            Utilities.SaveImage((BitmapImage) image.Source, "image.jpg", 0, 85);
+            MessageBox.Show("Image saved.");
+        }
+
         private void Image_ManipulationStarted(object sender, ManipulationStartedEventArgs e)
         {
             startingPositionOfImageX = transform.TranslateX;
@@ -66,5 +74,8 @@ namespace Gallery
 
             transform.Rotation = previousRotation;
         }
+
+
+
     }
 }

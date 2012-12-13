@@ -22,25 +22,14 @@
                     <CompositeTransform x:Name="transform" />
                 </Image.RenderTransform>
             </Image>
-            <StackPanel Height="64" HorizontalAlignment="Center" Margin="40,698,40,6" Name="stackPanel1" VerticalAlignment="Center" Width="400" Orientation="Horizontal" FlowDirection="LeftToRight">
-                <Button Content="Z +" Height="71" Name="button1" Width="100" Click="Zoom_add_Click" />
-                <Button Content="Z -" Height="71" Name="button2" Width="100" Click="Zoom_remove_Click" />
-                <Button Content="R +" Height="71" Name="button3" Width="100" Click="Rot_add_Click" />
-                <Button Content="R -" Height="71" Name="button4" Width="100" Click="Rot_remove_Click" />
+            <StackPanel Height="64" HorizontalAlignment="Center" Margin="0,698,0,6" Name="stackPanel1" VerticalAlignment="Center" Width="450" Orientation="Horizontal" FlowDirection="LeftToRight">
+                <Button Content="Z +" Height="71" Name="button1" Width="90" Click="Zoom_add_Click" />
+                <Button Content="Z -" Height="71" Name="button2" Width="90" Click="Zoom_remove_Click" />
+                <Button Content="R +" Height="71" Name="button3" Width="90" Click="Rot_add_Click" />
+                <Button Content="R -" Height="71" Name="button4" Width="90" Click="Rot_remove_Click" />
+                <Button Content="S" Height="71" Name="button5" Width="90" Click="Save_image_Click" />
             </StackPanel>
         </Grid>
     </Grid>
- 
-    <!--Sample code showing usage of ApplicationBar-->
-    <!--<phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
-            <shell:ApplicationBar.MenuItems>
-                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
-                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
-            </shell:ApplicationBar.MenuItems>
-        </shell:ApplicationBar>
-    </phone:PhoneApplicationPage.ApplicationBar>-->
 
 </phone:PhoneApplicationPage>

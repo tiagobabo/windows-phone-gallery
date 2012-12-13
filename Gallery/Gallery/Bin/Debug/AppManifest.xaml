@@ -1,6 +1,7 @@
 ﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="Gallery" EntryPointType="Gallery.App" RuntimeVersion="4.7.50308.0">
   <Deployment.Parts>
     <AssemblyPart x:Name="Gallery" Source="Gallery.dll" />
+    <AssemblyPart x:Name="FlickrNetWP7" Source="FlickrNetWP7.dll" />
     <AssemblyPart x:Name="Microsoft.Data.Edm.WP71" Source="Microsoft.Data.Edm.WP71.dll" />
     <AssemblyPart x:Name="Microsoft.Data.OData.WP71" Source="Microsoft.Data.OData.WP71.dll" />
     <AssemblyPart x:Name="Microsoft.Data.Services.Client.WP71" Source="Microsoft.Data.Services.Client.WP71.dll" />

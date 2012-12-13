@@ -48,15 +48,33 @@ namespace Gallery
                     this.NavigationService.Navigate(new Uri("/ImageViewer.xaml", UriKind.Relative));
                     PhoneApplicationService.Current.State["Image"] = img as Image;
                 }
-                catch (Exception ex)
+                catch
                 {
-                    //Exception handle appropriately for your app
+                    errorMessage();
                 }
             }
             else
             {
-                //Either cancelled or error handle appropriately for your app
+                errorMessage();
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("/BingSearch.xaml", UriKind.Relative));
+        }
+
+        private void errorMessage()
+        {
+            Dispatcher.BeginInvoke(() =>
+            {
+                MessageBox.Show("Something went wrong. Try again...");
+            });
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("/FlickrSearch.xaml", UriKind.Relative));
         }
     }
 }

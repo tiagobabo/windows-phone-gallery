@@ -17,3 +17,7 @@ C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\obj\Debug\Gallery.g.
 C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\obj\Debug\Gallery.dll
 C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\obj\Debug\Gallery.pdb
 C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\obj\Debug\XapCacheFile.xml
+C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\obj\Debug\BingSearch.g.i.cs
+C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\Bin\Debug\FlickrNetWP7.dll
+C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\Bin\Debug\FlickrNetWP7.pdb
+C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\obj\Debug\FlickrSearch.g.i.cs
