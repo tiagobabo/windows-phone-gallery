@@ -48,6 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Facebook">
+      <HintPath>..\packages\Facebook.6.0.16\lib\sl4-windowsphone71\Facebook.dll</HintPath>
+    </Reference>
     <Reference Include="FlickrNetWP7">
       <HintPath>..\packages\FlickrNet.WP7.3.5.0\lib\sl3-wp\FlickrNetWP7.dll</HintPath>
     </Reference>
@@ -81,6 +84,12 @@
       <DependentUpon>BingSearch.xaml</DependentUpon>
     </Compile>
     <Compile Include="BingSearchContainer.cs" />
+    <Compile Include="FacebookInfoPage.xaml.cs">
+      <DependentUpon>FacebookInfoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FacebookLoginPage.xaml.cs">
+      <DependentUpon>FacebookLoginPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FlickrSearch.xaml.cs">
       <DependentUpon>FlickrSearch.xaml</DependentUpon>
     </Compile>
@@ -104,6 +113,14 @@
     <Page Include="BingSearch.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FacebookInfoPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FacebookLoginPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="FlickrSearch.xaml">
       <SubType>Designer</SubType>
@@ -136,6 +153,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Image\bing.png" />
+    <Content Include="Image\facebook.png" />
     <Content Include="Image\flickr.png" />
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>

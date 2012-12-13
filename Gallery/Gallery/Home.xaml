@@ -43,6 +43,21 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <Style x:Key="facebook" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Image x:Name="facebookImage" Source="Image/facebook.png"/>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                                              Content=""/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </phone:PhoneApplicationPage.Resources>
 
     <!--LayoutRoot is the root grid where all page content is placed-->
@@ -62,14 +77,14 @@
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
                    
             <Button x:Name="btnLocalStorage" Content="Local storage" HorizontalAlignment="Center"  VerticalAlignment="Top" Click="btnLocalStorage_Click" Margin="127,68,126,0" />
-            <Button  Style="{StaticResource flickr}" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="116,193,115,0" Height="150" Width="225" Click="Button_Click_1" BorderThickness="0" />
-            <Button Style="{StaticResource bing}" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="116,115,115,0"  Height="150" Width="225" Click="Button_Click" BorderThickness="0" />
+            <Button  Style="{StaticResource flickr}" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="116,191,115,0" Height="150" Width="225" Click="Button_Click_1" BorderThickness="0" />
+            <Button Style="{StaticResource bing}" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="116,111,115,0"  Height="150" Width="225" Click="Button_Click" BorderThickness="0" />
+            <Button Style="{StaticResource facebook}" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="116,280,115,0" Height="150" Width="225"  Click="Button_Click_2" />
 
-
-            <TextBlock HorizontalAlignment="Left" Margin="31,377,0,0" TextWrapping="Wrap" Text="or you can insert a link directly:" VerticalAlignment="Top"/>
-            <TextBox x:Name="txtURL"  HorizontalAlignment="Center" Height="72"  TextWrapping="Wrap" Text="insert here" VerticalAlignment="Top" Width="436" Margin="10,413,10,0"/>
-            <Button x:Name="btnOpenFromLink" Content="Open" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="164,490,163,0" Click="btnOpenFromLink_Click"/>
-            <ProgressBar HorizontalAlignment="Center" Margin="31,562,42,15" Name="progressBar" Width="383" IsIndeterminate="True" RenderTransformOrigin="0.554,11.467" />
+            <TextBlock HorizontalAlignment="Left" Margin="31,407,0,0" TextWrapping="Wrap" Text="or you can insert a link directly:" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtURL"  HorizontalAlignment="Center" Height="72"  TextWrapping="Wrap" Text="insert here" VerticalAlignment="Top" Width="436" Margin="10,437,10,0"/>
+            <Button x:Name="btnOpenFromLink" Content="Open" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="172,508,171,0" Click="btnOpenFromLink_Click"/>
+            <ProgressBar HorizontalAlignment="Center" Margin="31,578,42,-1" Name="progressBar" Width="383" IsIndeterminate="True" RenderTransformOrigin="0.554,11.467" />
             <TextBlock HorizontalAlignment="Left" Margin="31,23,0,0" TextWrapping="Wrap" Text="search images in:" VerticalAlignment="Top"/>
         </Grid>
         
