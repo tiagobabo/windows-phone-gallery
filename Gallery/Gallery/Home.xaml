@@ -32,6 +32,7 @@
             <Button x:Name="btnLocalStorage" Content="Local storage" HorizontalAlignment="Center"  VerticalAlignment="Top" Click="btnLocalStorage_Click" Margin="127,68,126,0" />
             <Button Content="Flickr Search" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="127,217,126,0" Width="203" Click="Button_Click_1" />
             <Button Content="Bing Search" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="127,139,126,0" Width="203" Click="Button_Click" />
+            <Button Content="Facebook" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="127,290,126,0" Width="203" Click="Button_Click_2" />
             <TextBlock HorizontalAlignment="Left" Margin="31,377,0,0" TextWrapping="Wrap" Text="or you can insert a link directly:" VerticalAlignment="Top"/>
             <TextBox x:Name="txtURL"  HorizontalAlignment="Center" Height="72"  TextWrapping="Wrap" Text="insert here" VerticalAlignment="Top" Width="436" Margin="10,413,10,0"/>
             <Button x:Name="btnOpenFromLink" Content="Open" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="164,490,163,0" Click="btnOpenFromLink_Click"/>

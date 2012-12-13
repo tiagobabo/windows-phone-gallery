@@ -21,3 +21,7 @@ C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\obj\Debug\BingSearch
 C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\Bin\Debug\FlickrNetWP7.dll
 C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\Bin\Debug\FlickrNetWP7.pdb
 C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\obj\Debug\FlickrSearch.g.i.cs
+C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\Bin\Debug\Facebook.dll
+C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\Bin\Debug\Facebook.xml
+C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\obj\Debug\FacebookInfoPage.g.i.cs
+C:\Users\Babo\Desktop\windows-phone-gallery\Gallery\Gallery\obj\Debug\FacebookLoginPage.g.i.cs
