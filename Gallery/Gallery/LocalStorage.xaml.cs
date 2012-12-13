@@ -17,39 +17,39 @@ using System.Data.Services.Client;
 
 namespace Gallery
 {
-    public partial class MainPage : PhoneApplicationPage
+    public partial class LocalStorage : PhoneApplicationPage
     {
         int GridRowHeight = 150;
         int ImageHeight = 140;
         int ImageWidth = 140;
         int ImagesPerRow = 3;
+        
+        int RowNow = 0;
+        int ColumnNow = 0;
 
-        int countList = 0;
-        int countListAux = 0;
-        List<BitmapImage> images = new List<BitmapImage>();
-
-        public MainPage()
+        public LocalStorage()
         {
             InitializeComponent();
-            PopulateImageGrid();
+            ApplicationTitle.Text = Utilities.appName;
+            PageTitle.Text = "local storage";
+           // PopulateImageGrid();
+
+            RowDefinition rd = new RowDefinition();
+            rd.Height = new GridLength(GridRowHeight);
+            grid1.RowDefinitions.Add(rd);
 
             var bingContainer = new Bing.BingSearchContainer(
                 new Uri("https://api.datamarket.azure.com/Bing/Search/"));
 
-            // replace this value with your account key
             var accountKey = "XXQj7RFCzyb5w0QR0xhLd3g3pFCu4zRuBKhwJ/25Vh0=";
 
-            // the next two lines configure the bingContainer to use your credentials.
             bingContainer.Credentials = new NetworkCredential(accountKey, accountKey);
 
-            // note, this line was not required for the C# console app
             bingContainer.UseDefaultCredentials = false;
 
-            // the next two lines define the request for data and 
-            var imageQuery = bingContainer.Image("xbox", null, null, null, null, null, null);
+            var imageQuery = bingContainer.Image("cats", null, "en-US", null, null, null, "Size:Medium");
 
             imageQuery.BeginExecute(new AsyncCallback(this.ImageResultLoadedCallback), imageQuery);
-
         }
 
         private void ImageResultLoadedCallback(IAsyncResult ar)
@@ -59,20 +59,13 @@ namespace Gallery
             var enumerableImages = imageQuery.EndExecute(ar);
 
             var imagesList = enumerableImages.ToList();
-
-            // here you could also choose to simply bind the results list to
-            // a control in your UI. Instead, we will simply iterate over the
-            // results.
-
-            countList = imagesList.Count;
+            RowNow = 0;
+            ColumnNow = 0;
             foreach (var image in imagesList)
             {
-                 Dispatcher.BeginInvoke(() =>
-                {
-                    WebClient wc = new WebClient();
-                    wc.OpenReadCompleted += new OpenReadCompletedEventHandler(wc_OpenReadCompleted);
-                    wc.OpenReadAsync(new Uri(image.MediaUrl), wc);
-                });
+                WebClient wc = new WebClient();
+                wc.OpenReadCompleted += new OpenReadCompletedEventHandler(wc_OpenReadCompleted);
+                wc.OpenReadAsync(new Uri(image.MediaUrl), wc);
             }
         }
 
@@ -83,57 +76,46 @@ namespace Gallery
             {
                 try
                 {
-                    BitmapImage image = new BitmapImage();
-                    image.SetSource(e.Result);  
-
                     Dispatcher.BeginInvoke(() =>
                     {
-                        countListAux++;
-                        images.Add(image);
-                        if (countListAux == countList)
-                            PopulateImageGrid2();
+                        BitmapImage image = new BitmapImage();
+                        try
+                        {
+                            image.SetSource(e.Result);
+                        }
+                        catch (Exception ex) { return; }
+
+                        PopulateImageGrid2(image);  
                     });
                         
                 }
-                catch (Exception ex)
-                {
-                    Dispatcher.BeginInvoke(() =>
-                    {
-                        MessageBox.Show(ex.Message);
-                    });
-                   
-                }
-            }
-            else
-            {
-                //Either cancelled or error handle appropriately for your app
+                catch (Exception ex) {}
             }
         }
 
-        private void PopulateImageGrid2()
+        private void PopulateImageGrid2(BitmapImage image)
         {
-            for (int i = 0; i < images.Count; i += ImagesPerRow)
-            {
+            Image img = new Image();
+            img.Height = ImageHeight;
+            img.Stretch = Stretch.Fill;
+            img.Width = ImageWidth;
+            img.HorizontalAlignment = HorizontalAlignment.Center;
+            img.VerticalAlignment = VerticalAlignment.Center;
+            img.Source = image;
+            img.SetValue(Grid.RowProperty, RowNow);
+            img.SetValue(Grid.ColumnProperty, ColumnNow);
+            img.Tap += Image_Tap;
+            grid1.Children.Add(img);
+
+            ColumnNow++;
+
+            if(ColumnNow == ImagesPerRow) {
+                ColumnNow = 0;
+                RowNow++;
+
                 RowDefinition rd = new RowDefinition();
                 rd.Height = new GridLength(GridRowHeight);
                 grid1.RowDefinitions.Add(rd);
-
-                int maxPhotosToProcess = (i + ImagesPerRow < images.Count ? i + ImagesPerRow : images.Count);
-                int rowNumber = i / ImagesPerRow;
-                for (int j = i; j < maxPhotosToProcess; j++)
-                {
-                    Image img = new Image();
-                    img.Height = ImageHeight;
-                    img.Stretch = Stretch.Fill;
-                    img.Width = ImageWidth;
-                    img.HorizontalAlignment = HorizontalAlignment.Center;
-                    img.VerticalAlignment = VerticalAlignment.Center;
-                    img.Source = images[j];
-                    img.SetValue(Grid.RowProperty, rowNumber);
-                    img.SetValue(Grid.ColumnProperty, j - i);
-                    img.Tap += Image_Tap;
-                    grid1.Children.Add(img);
-                }
             }
         }
 
@@ -176,13 +158,6 @@ namespace Gallery
             PhoneApplicationService.Current.State["Image"] = sender as Image;
         }
 
-        static void MakeRequest()
-        {
-
-            
-        }
-
     }
 
-   
 }

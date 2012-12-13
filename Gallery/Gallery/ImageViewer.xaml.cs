@@ -20,7 +20,7 @@ namespace Gallery
         double startingPositionOfImageY;
 
         public ImageViewer()
-        {
+        { 
             InitializeComponent();
             Image image = PhoneApplicationService.Current.State["Image"] as Image;
             image1.Source = image.Source;
