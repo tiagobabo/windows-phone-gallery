@@ -26,3 +26,4 @@ C:\windows-phone-gallery\Gallery\Gallery\Bin\Debug\Gallery.pdb
 C:\windows-phone-gallery\Gallery\Gallery\Bin\Debug\AppManifest.xaml
 C:\windows-phone-gallery\Gallery\Gallery\Bin\Debug\Gallery.xap
 C:\windows-phone-gallery\Gallery\Gallery\obj\Debug\XapCacheFile.xml
+C:\windows-phone-gallery\Gallery\Gallery\obj\Debug\Gallery.csprojResolveAssemblyReference.cache
