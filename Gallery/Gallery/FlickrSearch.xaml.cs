@@ -13,6 +13,7 @@ using Microsoft.Phone.Controls;
 using FlickrNet;
 using System.Windows.Media.Imaging;
 using Microsoft.Phone.Shell;
+using System.IO.IsolatedStorage;
 
 namespace Gallery
 {
@@ -38,9 +39,13 @@ namespace Gallery
                 grid1.RowDefinitions.Clear();
                 grid1.Children.Clear();
 
+                AppSettings settings = new AppSettings();
+
                 progressBar.Visibility = Visibility.Visible;
                 PhotoSearchOptions options = new PhotoSearchOptions();
                 options.Tags = searchBox.Text;
+                options.Page = 1;
+                options.PerPage = settings.flickrMaxResults;
                 options.Extras = PhotoSearchExtras.LargeSquareUrl;
 
                 flickr.PhotosSearchAsync(options, r =>
