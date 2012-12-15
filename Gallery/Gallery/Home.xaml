@@ -62,7 +62,7 @@
 
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True">
-            <shell:ApplicationBarIconButton Click="btnSettings_Click" IconUri="/Image/settings.png" Text="Settings"/>
+            <shell:ApplicationBarIconButton Click="btnSettings_Click" IconUri="/Assets/AppBar/appbar.feature.settings.rest.png" Text="Settings"/>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
 
