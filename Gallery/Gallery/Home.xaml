@@ -14,21 +14,6 @@
     shell:SystemTray.IsVisible="True" d:DesignHeight="768" d:DesignWidth="480">
 
     <phone:PhoneApplicationPage.Resources>
-        <Style x:Key="settings" TargetType="Button">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Grid>
-                            <Image x:Name="settingsImage" Source="Image/settings.png"/>
-                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
-                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
-                                              Content=""/>
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
         <Style x:Key="bing" TargetType="Button">
             <Setter Property="Template">
                 <Setter.Value>
@@ -75,6 +60,13 @@
         </Style>
     </phone:PhoneApplicationPage.Resources>
 
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True">
+            <shell:ApplicationBarIconButton Click="btnSettings_Click" IconUri="/Image/settings.png" Text="Settings"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
@@ -97,15 +89,14 @@
             <Button Style="{StaticResource facebook}" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="116,280,115,0" Height="150" Width="225"  Click="Button_Click_2" />
 
             <TextBlock HorizontalAlignment="Left" Margin="31,407,0,0" TextWrapping="Wrap" Text="or you can insert a link directly:" VerticalAlignment="Top"/>
-            <TextBox x:Name="txtURL"  HorizontalAlignment="Center" Height="72"  TextWrapping="Wrap" Text="insert here" VerticalAlignment="Top" Width="436" Margin="10,437,10,0"/>
-            <Button x:Name="btnOpenFromLink" Content="Open" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="172,508,171,0" Click="btnOpenFromLink_Click"/>
+            <TextBox x:Name="txtURL"  HorizontalAlignment="Center" Height="72"  TextWrapping="Wrap" Text="insert here" VerticalAlignment="Top" Width="331" Margin="10,437,115,0"/>
+            <Button x:Name="btnOpenFromLink" Content="Open" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="333,435,10,0" Click="btnOpenFromLink_Click"/>
             <ProgressBar HorizontalAlignment="Center" Margin="31,578,42,-1" Name="progressBar" Width="383" IsIndeterminate="True" RenderTransformOrigin="0.554,11.467" />
             <TextBlock HorizontalAlignment="Left" Margin="31,7,0,0" TextWrapping="Wrap" Text="search images in:" VerticalAlignment="Top"/>
-            <Button Width="60" x:Name="btnSettings" Style="{StaticResource settings}" Content="Settings" HorizontalAlignment="Center"  VerticalAlignment="Top" Click="btnSettings_Click" Margin="386,0,10,0" />
         </Grid>
         
     </Grid>
 
-   
+    
 
 </phone:PhoneApplicationPage>
