@@ -45,7 +45,7 @@ namespace Gallery
                 bingContainer.UseDefaultCredentials = false;
 
                 var imageQuery = bingContainer.Image(searchBox.Text, null, "en-US", null, null, null, "Size:Medium");
-                imageQuery.AddQueryOption("$top", settings.bingMaxResults); 
+                imageQuery = imageQuery.AddQueryOption("$top", settings.bingMaxResults); 
                 imageQuery.BeginExecute(new AsyncCallback(this.ImageResultLoadedCallback), imageQuery);
             }
             else
