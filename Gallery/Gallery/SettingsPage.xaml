@@ -14,10 +14,6 @@
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
 
-    <phone:PhoneApplicationPage.Resources>
-        <local:AppSettings x:Key="appSettings"></local:AppSettings>
-    </phone:PhoneApplicationPage.Resources>
-
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
@@ -33,19 +29,22 @@
 
         <Grid x:Name="ContentGrid" Grid.Row="1">
             
-            <ListBox Height="140" HorizontalAlignment="Left" Margin="70,0,0,0" Name="flickrMaxResults" 
-        VerticalAlignment="Top" Width="360"  SelectedIndex="{Binding Source={StaticResource appSettings}, Path=flickrMaxResults, Mode=TwoWay}">
+            <ListBox Height="140" HorizontalAlignment="Left" Margin="70,69,0,0" Name="flickrMaxResults" 
+        VerticalAlignment="Top" Width="360" SelectionChanged="flickrMaxResults_SelectionChanged" >
                 <ListBoxItem Content="50" />
                 <ListBoxItem Content="30" />
                 <ListBoxItem Content="15" />
             </ListBox>
 
-            <ListBox Height="140" HorizontalAlignment="Left" Margin="70,150,0,0" Name="bingMaxResults" 
-        VerticalAlignment="Top" Width="360"  SelectedIndex="{Binding Source={StaticResource appSettings}, Path=bingMaxResults, Mode=TwoWay}">
+            <ListBox Height="140" HorizontalAlignment="Left" Margin="70,244,0,0" Name="bingMaxResults" 
+        VerticalAlignment="Top" Width="360" SelectionChanged="bingMaxResults_SelectionChanged" >
                 <ListBoxItem Content="50" />
                 <ListBoxItem Content="30" />
                 <ListBoxItem Content="15" />
             </ListBox>
+            <TextBlock HorizontalAlignment="Left" Margin="45,27,0,0" Text="Number of results for Flickr search:" TextWrapping="Wrap" VerticalAlignment="Top" Width="395" />
+            <TextBlock HorizontalAlignment="Left" Margin="45,209,0,0" Text="Number of results for Bing search:" TextWrapping="Wrap" VerticalAlignment="Top" Width="395" />
+
 
         </Grid>
     </Grid>

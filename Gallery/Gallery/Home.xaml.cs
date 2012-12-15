@@ -84,5 +84,10 @@ namespace Gallery
         {
             this.NavigationService.Navigate(new Uri("/FacebookLoginPage.xaml", UriKind.Relative));
         }
+
+        private void btnSettings_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("/SettingsPage.xaml", UriKind.Relative));
+        }
     }
 }

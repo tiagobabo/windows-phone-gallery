@@ -14,6 +14,21 @@
     shell:SystemTray.IsVisible="True" d:DesignHeight="768" d:DesignWidth="480">
 
     <phone:PhoneApplicationPage.Resources>
+        <Style x:Key="settings" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Image x:Name="settingsImage" Source="Image/settings.png"/>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                                              Content=""/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
         <Style x:Key="bing" TargetType="Button">
             <Setter Property="Template">
                 <Setter.Value>
@@ -86,6 +101,7 @@
             <Button x:Name="btnOpenFromLink" Content="Open" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="172,508,171,0" Click="btnOpenFromLink_Click"/>
             <ProgressBar HorizontalAlignment="Center" Margin="31,578,42,-1" Name="progressBar" Width="383" IsIndeterminate="True" RenderTransformOrigin="0.554,11.467" />
             <TextBlock HorizontalAlignment="Left" Margin="31,7,0,0" TextWrapping="Wrap" Text="search images in:" VerticalAlignment="Top"/>
+            <Button Width="60" x:Name="btnSettings" Style="{StaticResource settings}" Content="Settings" HorizontalAlignment="Center"  VerticalAlignment="Top" Click="btnSettings_Click" Margin="386,0,10,0" />
         </Grid>
         
     </Grid>

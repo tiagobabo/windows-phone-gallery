@@ -163,6 +163,7 @@
     <Content Include="Image\bing.png" />
     <Content Include="Image\facebook.png" />
     <Content Include="Image\flickr.png" />
+    <Content Include="Image\settings.png" />
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />

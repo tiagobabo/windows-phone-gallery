@@ -37,12 +37,15 @@ namespace Gallery
 
                 var accountKey = "XXQj7RFCzyb5w0QR0xhLd3g3pFCu4zRuBKhwJ/25Vh0=";
                 
+                 AppSettings settings = new AppSettings();
+
                 var bingContainer = new Bing.BingSearchContainer(
                     new Uri("https://api.datamarket.azure.com/Bing/Search/"));
                 bingContainer.Credentials = new NetworkCredential(accountKey, accountKey);
                 bingContainer.UseDefaultCredentials = false;
 
                 var imageQuery = bingContainer.Image(searchBox.Text, null, "en-US", null, null, null, "Size:Medium");
+                imageQuery.AddQueryOption("$top", settings.bingMaxResults); 
                 imageQuery.BeginExecute(new AsyncCallback(this.ImageResultLoadedCallback), imageQuery);
             }
             else
