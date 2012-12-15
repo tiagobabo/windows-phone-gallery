@@ -20,6 +20,7 @@ namespace Gallery
     {
         int RowNow = 0;
         int ColumnNow = 0;
+        int currentSearch = 0;
 
         public BingSearch()
         {
@@ -31,6 +32,7 @@ namespace Gallery
         {
             if (searchBox.Text != "")
             {
+                currentSearch++;
                 progressBar.Visibility = Visibility.Visible;
                 grid1.RowDefinitions.Clear();
                 grid1.Children.Clear();
@@ -76,13 +78,18 @@ namespace Gallery
             foreach (var image in imagesList)
             {
                 WebClient wc = new WebClient();
-                wc.OpenReadCompleted += new OpenReadCompletedEventHandler(wc_OpenReadCompleted);
+                int cs = currentSearch;
+                wc.OpenReadCompleted += (s, args) =>
+                {
+                    wc_OpenReadCompleted(s, args, cs);
+                };
+
                 wc.OpenReadAsync(new Uri(image.MediaUrl), wc);
             }
         }
 
 
-        void wc_OpenReadCompleted(object sender, OpenReadCompletedEventArgs e)
+        void wc_OpenReadCompleted(object sender, OpenReadCompletedEventArgs e, int currentSearch)
         {
             if (e.Error == null && !e.Cancelled)
             {
@@ -90,17 +97,20 @@ namespace Gallery
                 {
                     Dispatcher.BeginInvoke(() =>
                     {
-                        BitmapImage image = new BitmapImage();
-                        try
+                        if (currentSearch == this.currentSearch)
                         {
-                            image.SetSource(e.Result);
-                        }
-                        catch (Exception) 
-                        {
-                            return;
-                        }
+                            BitmapImage image = new BitmapImage();
+                            try
+                            {
+                                image.SetSource(e.Result);
+                            }
+                            catch (Exception)
+                            {
+                                return;
+                            }
 
-                        PopulateImageGrid2(image);
+                            PopulateImageGrid2(image);
+                        }
                     });
 
                 }

@@ -22,11 +22,15 @@ namespace Gallery
         Flickr flickr;
         int RowNow = 0;
         int ColumnNow = 0;
-        int ResultsPerSearch = 48;
+        int ResultsPerSearch;
+        int currentSearch = 0;
 
         public FlickrSearch()
         {
             InitializeComponent();
+            AppSettings settings = new AppSettings();
+            ResultsPerSearch = settings.flickrMaxResults;
+
             progressBar.Visibility = Visibility.Visible;
             flickr = new Flickr("922ada222aca8e43571108b76cabbd0e", "10bde29356018553");
             populateGridWithRecentOnes();
@@ -36,6 +40,7 @@ namespace Gallery
         {
             if (searchBox.Text != "")
             {
+                currentSearch++;
                 grid1.RowDefinitions.Clear();
                 grid1.Children.Clear();
 
@@ -85,9 +90,7 @@ namespace Gallery
                 }
 
                 PhotoCollection photos = r.Result;
-
                 populateGrid(photos);
-
             });
         }
 
@@ -102,12 +105,17 @@ namespace Gallery
                 results--;
                 if (results == 0) break;
                 WebClient wc = new WebClient();
-                wc.OpenReadCompleted += new OpenReadCompletedEventHandler(wc_OpenReadCompleted);
+
+                int cs = currentSearch;
+                wc.OpenReadCompleted += (s, args) =>
+                {
+                    wc_OpenReadCompleted(s, args, cs);
+                };
                 wc.OpenReadAsync(new Uri(image.MediumUrl), wc);
             }
         }
 
-        void wc_OpenReadCompleted(object sender, OpenReadCompletedEventArgs e)
+        void wc_OpenReadCompleted(object sender, OpenReadCompletedEventArgs e, int currentSearch)
         {
             if (e.Error == null && !e.Cancelled)
             {
@@ -115,17 +123,20 @@ namespace Gallery
                 {
                     Dispatcher.BeginInvoke(() =>
                     {
-                        BitmapImage image = new BitmapImage();
-                        try
+                        if (currentSearch == this.currentSearch)
                         {
-                            image.SetSource(e.Result);
-                        }
-                        catch (Exception)
-                        {
-                            return;
-                        }
+                            BitmapImage image = new BitmapImage();
+                            try
+                            {
+                                image.SetSource(e.Result);
+                            }
+                            catch (Exception)
+                            {
+                                return;
+                            }
 
-                        PopulateImageGrid2(image);
+                            PopulateImageGrid2(image);
+                        }
                     });
 
                 }
