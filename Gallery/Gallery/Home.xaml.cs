@@ -80,6 +80,7 @@ namespace Gallery
             Dispatcher.BeginInvoke(() =>
             {
                 MessageBox.Show("Something went wrong. Try again...");
+                progressBar.Visibility = Visibility.Collapsed;
             });
         }
 
