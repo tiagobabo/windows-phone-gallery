@@ -31,7 +31,15 @@ namespace Gallery
             WebClient wc = new WebClient();
             wc.OpenReadCompleted += new OpenReadCompletedEventHandler(wc_OpenReadCompleted);
             progressBar.Visibility = Visibility.Visible;
-            wc.OpenReadAsync(new Uri(txtURL.Text), wc);
+            try
+            {
+                wc.OpenReadAsync(new Uri(txtURL.Text), wc);
+            }
+            catch
+            {
+                 errorMessage();
+            }
+            
         }
 
         void wc_OpenReadCompleted(object sender, OpenReadCompletedEventArgs e)
