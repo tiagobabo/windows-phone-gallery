@@ -31,7 +31,7 @@ namespace Gallery
             WebClient wc = new WebClient();
             wc.OpenReadCompleted += new OpenReadCompletedEventHandler(wc_OpenReadCompleted);
             progressBar.Visibility = Visibility.Visible;
-            wc.OpenReadAsync(new Uri("http://www.cardioaccess.com/OpImages/asd1.jpg"), wc);
+            wc.OpenReadAsync(new Uri(txtURL.Text), wc);
         }
 
         void wc_OpenReadCompleted(object sender, OpenReadCompletedEventArgs e)
@@ -88,6 +88,12 @@ namespace Gallery
         private void btnSettings_Click(object sender, EventArgs e)
         {
             this.NavigationService.Navigate(new Uri("/SettingsPage.xaml", UriKind.Relative));
+        }
+
+        private void txtURL_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txtURL.Text == "insert here")
+                txtURL.Text = "";
         }
     }
 }

@@ -89,9 +89,9 @@
             <Button Style="{StaticResource facebook}" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="116,280,115,0" Height="150" Width="225"  Click="Button_Click_2" />
 
             <TextBlock HorizontalAlignment="Left" Margin="31,407,0,0" TextWrapping="Wrap" Text="or you can insert a link directly:" VerticalAlignment="Top"/>
-            <TextBox x:Name="txtURL"  HorizontalAlignment="Center" Height="72"  TextWrapping="Wrap" Text="insert here" VerticalAlignment="Top" Width="331" Margin="10,437,115,0"/>
+            <TextBox x:Name="txtURL"  HorizontalAlignment="Center" Height="72"  TextWrapping="Wrap" VerticalAlignment="Top" Width="331" Margin="10,437,115,0"/>
             <Button x:Name="btnOpenFromLink" Content="Open" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="333,435,10,0" Click="btnOpenFromLink_Click"/>
-            <ProgressBar HorizontalAlignment="Center" Margin="31,578,42,-1" Name="progressBar" Width="383" IsIndeterminate="True" RenderTransformOrigin="0.554,11.467" />
+            <ProgressBar HorizontalAlignment="Center" Margin="23,514,50,21" Name="progressBar" Width="383" IsIndeterminate="True" RenderTransformOrigin="0.554,11.467" />
             <TextBlock HorizontalAlignment="Left" Margin="31,7,0,0" TextWrapping="Wrap" Text="search images in:" VerticalAlignment="Top"/>
         </Grid>
         
